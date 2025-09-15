@@ -1,0 +1,46 @@
+echo:
+  description: Handler para el modo eco
+  name: echo
+  permission: use_echo
+  prefix: echo
+admin:
+  description: Comandos administrativos para gestión de usuarios y sistema.
+  name: admin
+  permission: admin_commands
+  prefix: admin
+file:
+  description: Busqueda de documentos en SGC.
+  name: file
+  permission: file_search
+  prefix: file
+help:
+  description: Handler para mostrar ayuda.
+  name: help
+  prefix: help
+llm:
+  description: Handler para conectarse con ChatGPT y ejecutar comandos específicos.
+  name: llm
+  permission: use_llm
+  prefix: llm
+sgc:
+  description: Handler para interactuar con el Sistema de Gestión de Calidad (SGC).
+  metadata:
+    general_explanation: Se encarga de las conversaciones basadas en documentos y archivos
+      del Sistema de Gestión de Calidad (SGC), utilizando un modelo de lenguaje con
+      recuperación aumentada (RAG).
+    functionality:
+    - Responde preguntas utilizando los documentos del Sistema de Gestión de Calidad
+      (SGC).
+  name: sgc
+  permission: use_sgc
+  prefix: sgc
+ref:
+  description: Handler para interactuar con las referencia médicas.
+  metadata:
+    general_explanation: Se encarga de las conversaciones basadas en referencia médicas,
+      utilizando un modelo de lenguaje con recuperación aumentada (RAG).
+    functionality:
+    - Responde preguntas utilizando los documentos de referencia médica.
+  name: ref
+  permission: use_ref
+  prefix: ref

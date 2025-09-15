@@ -1,0 +1,7 @@
+**Documentos Comunes y Frecuentes** 📝
+
+Estos son los códigos de los documentos que se utilizan con mayor frecuencia. Puede usar estos códigos para una búsqueda rápida mediante `/{prefix} <code>`:
+
+{documents_list}
+
+**Nota**: Para un listado completo de todos los documentos, use el código maestro: `{master_document_code}`.

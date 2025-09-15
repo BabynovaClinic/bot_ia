@@ -1,0 +1,16 @@
+¡Hola **{user_name}**!
+
+Soy **MaIA**, tu asistente virtual de Babynova.
+
+Me complace darte la bienvenida a nuestra conversación. 
+
+Tu rol actual es **{user_role}**. Estoy aquí para ayudarte con una variedad de comandos, como:
+
+
+{bot_commands}
+
+Para empezar una nueva conversación y borrar la memoria anterior, te recomiendo usar el comando `/clear`. 
+
+Si necesitas ayuda para empezar, simplemente escribe `/help` para ver una lista de ayuda de todos mis comandos disponibles o `/help <comando>` para ayuda sobre un comando particular.
+
+¡Espero que trabajemos muy bien juntos!

@@ -1,0 +1,90 @@
+
+# --- Files Configuration ---
+users_path: ./data/user_data.json
+excluded_users_path: ./data/excluded_user_data.json
+doc_sync_path: ./data/doc_sync_data.json
+ref_sync_path: ./data/ref_sync_data.json
+doc_meta_path: ./data/doc_meta_data.json
+ref_meta_path: ./data/ref_meta_data.json
+
+# --- Stats Configuration ---
+stats_file_path: ./logs/stats_logs/usage_stats.csv
+
+# --- Templates Configuration ---
+templates_dir: ./config/templates
+
+# --- LibreOffice Configuration ---
+libreoffice_path: '/usr/bin/soffice'
+
+# --- Handler Configuration ---
+handler_cfg_path: ./config/handler_config.yaml
+
+# --- Sharepoint Configuration ---
+file_extensions:
+  - "pdf"
+  - "doc"
+  - "docx"
+  - "xlsx"
+
+whitelist_paths:
+  - 'Sistema de gestión/2. GESTION DE CALIDAD/FORMATOS'
+  - 'Sistema de gestión/2. GESTION DE CALIDAD/MANUALES'
+  - 'Sistema de gestión/3. GESTIÓN JURÍDICA/01. FORMATOS'
+  - 'Sistema de gestión/3. GESTIÓN JURÍDICA/02. MANUALES'
+  - 'Sistema de gestión/4. GESTION CLINICA/FORMATOS'
+  - 'Sistema de gestión/4. GESTION CLINICA/MANUALES'
+  - 'Sistema de gestión/4. GESTION CLINICA/PROTOCOLOS'
+  - 'Sistema de gestión/5. GESTION DE APOYO AL PACIENTE/FORMATOS'
+  - 'Sistema de gestión/5. GESTION DE APOYO AL PACIENTE/PROTOCOLOS'
+  - 'Sistema de gestión/6. GESTION DE LABORATORIO BIOLOGIA REPRODUCTIVA/FORMATOS'
+  - 'Sistema de gestión/6. GESTION DE LABORATORIO BIOLOGIA REPRODUCTIVA/MANUALES'
+  - 'Sistema de gestión/6. GESTION DE LABORATORIO BIOLOGIA REPRODUCTIVA/PROTOCOLOS'
+  - 'Sistema de gestión/7. GESTION MEDICA/FORMATOS'
+  - 'Sistema de gestión/7. GESTION MEDICA/MANUALES'
+  - 'Sistema de gestión/7. GESTION MEDICA/PROTOCOLOS'
+  - 'Sistema de gestión/8. GESTION ADMINISTRATIVA/FORMATOS'
+  - 'Sistema de gestión/8. GESTION ADMINISTRATIVA/MANUALES'
+  - 'Sistema de gestión/8. GESTION ADMINISTRATIVA/PROTOCOLOS'
+  - 'Sistema de gestión/9. GESTION DE INFRAESTRUCTURA TECNOLÓGICA/FORMATOS'
+  - 'Sistema de gestión/9. GESTION DE INFRAESTRUCTURA TECNOLÓGICA/MANUALES'
+  - 'Sistema de gestión/10. GESTION FINANCIERA/FORMATOS'
+  - 'Sistema de gestión/10. GESTION FINANCIERA/MANUALES'
+  - 'Sistema de gestión/10. GESTION FINANCIERA/PROTOCOLOS'
+  - 'Sistema de gestión/11. GESTIÓN DEL TALENTO HUMANO/FORMATOS'
+  - 'Sistema de gestión/11. GESTIÓN DEL TALENTO HUMANO/MANUALES'
+  - 'Sistema de gestión/11. GESTIÓN DEL TALENTO HUMANO/PROTOCOLOS'
+
+blacklist_paths:
+  - ""
+
+keywords_to_skip:
+  - "obsoleto"
+  - "obsoletos"
+  - "registros"
+
+# --- Synchronization Configuration ---
+sync_hour: 2
+sync_min: 30
+
+# --- Large Language Model Configuration ---
+openai_model_name: gpt-4o
+openai_emb_name: text-embedding-3-small
+
+llm_max_input_tokens: 4000
+llm_max_output_tokens: 1000
+llm_temperature: 0.2
+llm_top_p: 1.0
+llm_n_responses: 1
+llm_presence_penalty: 0.0
+llm_frequency_penalty: 0.5
+
+# --- Logger Configuration ---
+sys_log_level: INFO # DEBUG, INFO, WARNING, ERROR, CRITICAL
+sys_log_format: standard # json, standard
+sys_log_file: ./logs/sys_logs/mst_bot.log
+sys_log_file_enabled: True
+sys_log_retention_days: 30
+user_log_level: INFO
+user_log_dir: ./logs/user_logs/
+user_log_retention_days: 30
+user_log_file_enabled: True

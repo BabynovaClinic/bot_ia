@@ -1,0 +1,13 @@
+services:
+  myapp:
+    build: .
+    container_name: MaIA-Concept
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    ports:
+      - "3978:3978"
+    command: python app.py

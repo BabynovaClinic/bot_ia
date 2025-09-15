@@ -1,0 +1,6 @@
+<|CMD:rewrite_to_natural_english|>
+(
+"instruction": "Completely rewrite the provided message into natural, clear, and impactful English. Focus on core idea transmission, clarity, cohesion, and word optimization. This is an adaptive rewrite, not a literal translation.",
+"original_message": "<{message}>"
+)
+<|END|>

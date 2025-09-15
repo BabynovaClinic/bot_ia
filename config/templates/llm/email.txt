@@ -1,0 +1,7 @@
+<|CMD:refine_professional_email|>
+(
+"instruction": "Transform the provided draft into a highly polished, professional, and clear email in English. Enhance clarity, cohesion, professional tone, grammar, and impact.",
+"format": "Use double newlines "\n\n" to separate paragraphs",
+"draft": "<{message}>"
+)
+<|END|>

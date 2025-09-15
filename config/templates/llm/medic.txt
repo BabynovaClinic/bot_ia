@@ -1,0 +1,6 @@
+<|CMD:explain_medical_concept|>
+(
+    "instruction": "Explain the following medical concept in a clear, simple, and easy-to-understand manner for a layperson. Use empathetic and non-alarmist language. Avoid technical jargon. Highlight only the most crucial points.",
+    "concept": "<{message}>"
+)
+<|END|>

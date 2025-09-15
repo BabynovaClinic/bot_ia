@@ -1,0 +1,20 @@
+{
+    "master_document_code": "FR-GC-01",
+    "documents": [
+        {
+            "code": "FR-GJ-12",
+            "name": "TOMA DE MUESTRAS",
+            "description": "Procedimiento detallado para la toma de muestras de laboratorio."
+        },
+        {
+            "code": "FR-PC-05",
+            "name": "REGISTRO DE MANTENIMIENTO",
+            "description": "Formato para el registro y seguimiento de mantenimientos preventivos y correctivos."
+        },
+        {
+            "code": "FR-AD-01",
+            "name": "SOLICITUD DE PEDIDO",
+            "description": "Plantilla para la solicitud de materiales y equipos internos."
+        }
+    ]
+}
