@@ -55,20 +55,20 @@ async def start_background_tasks(app):
     app['scheduler'].add_job(run_daily_sync, 'cron', hour=SETTINGS.sync_hour, minute=SETTINGS.sync_min)
     app['scheduler'].start()
 
-APP.on_startup.append(start_background_tasks)
+app.on_startup.append(start_background_tasks)
 
 # Add a function to stop the scheduler when the app closes
 async def cleanup_background_tasks(app):
     app['scheduler'].shutdown()
 
-APP.on_cleanup.append(cleanup_background_tasks)
+app.on_cleanup.append(cleanup_background_tasks)
 
 # Add routes
-APP.router.add_get("/", welcome)
-APP.router.add_post("/api/messages", messages)
+app.router.add_get("/", welcome)
+app.router.add_post("/api/messages", messages)
 
 if __name__ == "__main__":
     try:
-        web.run_app(APP, host=SETTINGS.host, port=SETTINGS.port)
+        web.run_app(app, host=SETTINGS.host, port=SETTINGS.port)
     except Exception as error:
         raise error
