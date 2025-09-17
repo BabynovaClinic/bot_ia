@@ -1,0 +1,96 @@
+{
+  "authorized_users": {
+    "29:15QBw5vDVSRLPx4mkJOPLU4Fieg_57Sph_5vY9AzQZIcU682Cy6YxBQhfzrY-0u9S6yZJlMx-iQRTTQ3ovKz-dw": {
+      "name": "Tomas Montealegre",
+      "email": "Tmontealegre@babynovaclinic.com",
+      "role": "admin",
+      "added_date": "2025-07-02T11:11:58.836223",
+      "added_by": "system"
+    },
+    "29:1DdJQxmuuzD5kWR73QwIXDd173toujkdqjjJYZoxLOX9NxGQhnm5mbVx2aecux8XMf24IhdA9g3yvq21nNzJp5A": {
+      "name": "Claudia Margarita Parrado Rodriguez",
+      "email": "cparrado@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-07-04T09:58:44.501733",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1i75It8CiHednfxGdK5CibmsdYDQVrbVW9sMsVD5gYfW7fbOI7ov6rmeqgoJamW7L_VetBf45ph_Z6r5ec2VY1A": {
+      "name": "Dayanna Alejandra Rodríguez Becerra",
+      "email": "drodriguez@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-07-04T10:39:12.173750",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1xbkekc-5mhnR3GUyO-yU31BNYe7peih8WwiVERSB2TPtBAFXpda_y3ZmQLU8BmMm_yiydA5P9FC32AfTVwCVCQ": {
+      "name": "Miguel Saffon Cuartas",
+      "email": "msaffon@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-07-04T12:08:42.099124",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:17PW80dT4w5YTZEYO_q04ml3EkKRgukZPeZ9pt7t8jUkqkUWJE9Y3p1ZL4hCw6_gMwBe-6RFcVzQnvIXCh1QciA": {
+      "name": "Eliana Sofia Ramirez Dulcey",
+      "email": "eramirez@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-07-04T16:08:32.439351",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1gfYMf1rNRlpXdZQjQLXgs6IEDIxLabVkGOxzP4b2O_Cc6vWuXSTDBPRgOttWsxMzOy2YGdKhsMukkEghnJ-ldw": {
+      "name": "Michael Alarcon",
+      "email": "malarcon@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-07-07T09:31:06.947627",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1Ngy9a0cJvhqsEyKEvr2Jy3v2br4l4iFZEaqpKGTMq0NAs27GufJT21r3U-dO2lbMou0ScVuNG0E4iceeK6MLNw": {
+      "name": "Jose Pablo Saffon",
+      "email": "jsaffon@babynovaclinic.com",
+      "role": "medic",
+      "added_date": "2025-09-05T15:17:49.654946",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1_adY5dQxI0vkL2yAp7iYJxtrgOoQwHJUteUT_WSt966YuwPcqVrvVuZrEYombnTQ7Fn4ML-WassiUkrWUS1GmA": {
+      "name": "Giovanny Javier Molinares",
+      "email": "gmolinares@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-09-05T15:28:44.434668",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1TBYZHXfDLWclMX5FI7DNfTZvz7WrUTotj7BjofuLnuJXZgDCYQEsTORDzd7fQm9QtiZSFw1RG3uqYWtWStWpFA": {
+      "name": "Alejandro Erazo Ortega",
+      "email": "aerazo@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-09-05T15:31:22.927166",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1v7A_KTQvdgdyByH-wdhAubA_7a7xbqrd0jtYG4BIeKuLFTlvHGBZElgPdQEDlMUg0liRMZpXQkQHy0aNR61szg": {
+      "name": "Katherin Cortes",
+      "email": "kcortes@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-09-05T15:33:57.006018",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1SD6ebDPp59SrDEhoEyquthBj0Rag8yOKBXA1YrEDDCIqhsrkq9nhttrrCwbtosdMG0NkIJKj84CqLrfgsvd5DA": {
+      "name": "Federico Escobar",
+      "email": "cfo@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-09-05T15:35:23.953754",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1x85_zluh0FhA7q9a_5B75McRXjmOFaISq_TQqj8OtLTBODgALAB3Lugh5NlENl8NgHnoEKiFzsu49W4l_x1E2Q": {
+      "name": "Monica Monroy",
+      "email": "mmonroy@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-09-05T15:36:10.337401",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    },
+    "29:1Hvsa_nhd_ym-eIgF4U8wcxvYElPtYxdHYMe8k24phrH3agTJ6fkDqiglTBhe3gbcfSQDFeKdrgTIXRQSUBlfeg": {
+      "name": "Danyelo Ramirez Chacon",
+      "email": "dramirez@babynovaclinic.com",
+      "role": "user",
+      "added_date": "2025-09-05T15:37:04.131829",
+      "added_by": "Tomas Andres Montealegre Pallares"
+    }
+  },
+  "last_updated": "2025-09-05T15:37:04.131829"
+}
