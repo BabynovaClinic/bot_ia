@@ -1,3 +1,4 @@
+import os
 import asyncio
 from http import HTTPStatus
 
@@ -33,14 +34,14 @@ async def welcome(req: Request) -> Response:
 
 # Listen for incoming requests on /api/messages.
 async def messages(req: Request) -> Response:
-    if "application/json" in req.headers["Content-Type"]:
+    if "application/json" in req.headers.get("Content-Type", ""):
         body = await req.json()
     else:
         return Response(status=HTTPStatus.UNSUPPORTED_MEDIA_TYPE)
 
-    auth_header = req.headers["Authorization"] if "Authorization" in req.headers else ""
-
+    auth_header = req.headers.get("Authorization", "")
     response = await BOT.process_activity(body, auth_header)
+
     if response:
         return json_response(data=response.body, status=response.status)
     
@@ -51,15 +52,15 @@ app = web.Application(middlewares=[aiohttp_error_middleware])
 
 # Add the start function to the application's startup
 async def start_background_tasks(app):
-    app['scheduler'] = AsyncIOScheduler()
-    app['scheduler'].add_job(run_daily_sync, 'cron', hour=SETTINGS.sync_hour, minute=SETTINGS.sync_min)
-    app['scheduler'].start()
+    app["scheduler"] = AsyncIOScheduler()
+    app["scheduler"].add_job(run_daily_sync, "cron", hour=SETTINGS.sync_hour, minute=SETTINGS.sync_min)
+    app["scheduler"].start()
 
 app.on_startup.append(start_background_tasks)
 
 # Add a function to stop the scheduler when the app closes
 async def cleanup_background_tasks(app):
-    app['scheduler'].shutdown()
+    app["scheduler"].shutdown()
 
 app.on_cleanup.append(cleanup_background_tasks)
 
@@ -69,6 +70,8 @@ app.router.add_post("/api/messages", messages)
 
 if __name__ == "__main__":
     try:
-        web.run_app(app, host=SETTINGS.host, port=SETTINGS.port)
+        # Render requiere que usemos el puerto de la variable de entorno PORT
+        port = int(os.environ.get("PORT", SETTINGS.port))
+        web.run_app(app, host="0.0.0.0", port=port)
     except Exception as error:
         raise error
