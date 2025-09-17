@@ -47,7 +47,7 @@ async def messages(req: Request) -> Response:
     return Response(status=HTTPStatus.OK)
 
 # Create App
-APP = web.Application(middlewares=[aiohttp_error_middleware])
+app = web.Application(middlewares=[aiohttp_error_middleware])
 
 # Add the start function to the application's startup
 async def start_background_tasks(app):
