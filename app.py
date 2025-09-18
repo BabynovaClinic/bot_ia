@@ -15,11 +15,11 @@ from src.config.settings import Settings, get_settings
 
 SETTINGS: Settings = get_settings()
 
-# Create Synchronizer and Scheduler
-SYNC: SynchronizerManager = SynchronizerManager()
+# # Create Synchronizer and Scheduler
+# SYNC: SynchronizerManager = SynchronizerManager()
 
-async def run_daily_sync(synchronizer_manager: SynchronizerManager = SYNC) -> None:
-    await asyncio.to_thread(synchronizer_manager.run_synchronization)
+# async def run_daily_sync(synchronizer_manager: SynchronizerManager = SYNC) -> None:
+#     await asyncio.to_thread(synchronizer_manager.run_synchronization)
 
 # Create Authentication Middleware
 AUTH_MANAGER: AuthManager = AuthManager(SETTINGS.users_path)
@@ -50,19 +50,19 @@ async def messages(req: Request) -> Response:
 # Create App
 app = web.Application(middlewares=[aiohttp_error_middleware])
 
-# Add the start function to the application's startup
-async def start_background_tasks(app):
-    app["scheduler"] = AsyncIOScheduler()
-    app["scheduler"].add_job(run_daily_sync, "cron", hour=SETTINGS.sync_hour, minute=SETTINGS.sync_min)
-    app["scheduler"].start()
+# # Add the start function to the application's startup
+# async def start_background_tasks(app):
+#     app["scheduler"] = AsyncIOScheduler()
+#     app["scheduler"].add_job(run_daily_sync, "cron", hour=SETTINGS.sync_hour, minute=SETTINGS.sync_min)
+#     app["scheduler"].start()
 
-app.on_startup.append(start_background_tasks)
+# app.on_startup.append(start_background_tasks)
 
-# Add a function to stop the scheduler when the app closes
-async def cleanup_background_tasks(app):
-    app["scheduler"].shutdown()
+# # Add a function to stop the scheduler when the app closes
+# async def cleanup_background_tasks(app):
+#     app["scheduler"].shutdown()
 
-app.on_cleanup.append(cleanup_background_tasks)
+# app.on_cleanup.append(cleanup_background_tasks)
 
 # Add routes
 app.router.add_get("/", welcome)
