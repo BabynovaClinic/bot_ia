@@ -25,8 +25,9 @@ SENSITIVE_KEYS = {
     "folder_id",
     "openai_api_key",
     "openai_vector_store_id_sgc",
-    "openai_vector_store_id_ref"
+    "openai_vector_store_id_ref",
 }
+
 
 class Settings(BaseSettings):
     """
@@ -37,7 +38,7 @@ class Settings(BaseSettings):
         env_file=DOTENV_PATH,
         env_file_encoding="utf-8",
         case_sensitive=False,
-        extra="ignore"
+        extra="ignore",
     )
 
     # --- Server Configuration ---
@@ -47,11 +48,13 @@ class Settings(BaseSettings):
     # --- Default Admin Configuration ---
     default_admin_user_id: str
     default_admin_name: str = Field(default="Administrador")
-    default_admin_email: str = Field(default="admin@babynovaclinic.com") 
+    default_admin_email: str = Field(default="admin@babynovaclinic.com")
 
     # --- Files Configuration ---
     # Si existe el secret file en Render, usarlo, si no, usar local
-    users_path: str = Field(default=str(SECRET_USERS_PATH if SECRET_USERS_PATH.exists() else "./data/user_data.json"))
+    users_path: str = Field(
+        default=str(SECRET_USERS_PATH) if SECRET_USERS_PATH.exists() else "./data/user_data.json"
+    )
     excluded_users_path: str = Field(default="./data/excluded_user_data.json")
     doc_sync_path: str = Field(default="./data/doc_sync_data.json")
     ref_sync_path: str = Field(default="./data/ref_sync_data.json")
@@ -63,7 +66,7 @@ class Settings(BaseSettings):
 
     # --- Templates Configuration ---
     templates_dir: str = Field(default="./config/templates")
-    
+
     # --- LibreOffice Configuration ---
     libreoffice_path: str = Field(default="C:/Program Files/LibreOffice/program/soffice.exe")
 
@@ -94,7 +97,7 @@ class Settings(BaseSettings):
     openai_api_key: str
     openai_vector_store_id_sgc: str
     openai_vector_store_id_ref: str
-    
+
     # --- Large Language Model Configuration ---
     openai_model_name: str = Field(default="gpt-3.5-turbo")
     openai_emb_name: str = Field(default="text-embedding-3-small")
@@ -119,12 +122,12 @@ class Settings(BaseSettings):
     user_log_dir: str = Field(default="./logs/user_logs/")
     user_log_retention_days: int = Field(default=30)
     user_log_file_enabled: bool = Field(default=True)
-    
+
     def get_base_url(self) -> str:
         """Get the base URL for the application."""
         protocol = "https"
         return f"{protocol}://{self.host}:{self.port}"
-    
+
     def validate_llm_keys(self) -> bool:
         """Validate that required LLM configuration is present."""
         if not self.openai_api_key:
@@ -132,8 +135,10 @@ class Settings(BaseSettings):
             return False
         return True
 
+
 # Global settings instance (singleton pattern)
 _settings: Optional[Settings] = None
+
 
 def get_settings() -> Settings:
     """Get application settings (singleton pattern)."""
