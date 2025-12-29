@@ -165,6 +165,40 @@ class MSTeamsBot(ActivityHandler):
         SGCHandler, REFHandler and EchoHandler. It also designates the LLMHandler as
         the default fallback handler.
         """
+        # Register RAG Handler (SGC)
+        sgc_handler = RAGHandler(
+            self.auth_manager,
+            self.auth_middleware,
+            self.settings.openai_vector_store_id_sgc,
+            self._hanlder_map["sgc"]["prefix"],
+            Permission(self._hanlder_map["sgc"]["permission"]),
+            self._hanlder_map["sgc"]["name"],
+            self._hanlder_map["sgc"]["description"],
+            self.stats_manager,
+            self.memory_manager,
+            str(Path(self.settings.templates_dir) / "rag"),
+            "_instructions_sgc.txt"
+            )
+        self.handler_registry.register_handler(self._hanlder_map["sgc"]["name"], sgc_handler, is_default=True)
+        self._hanlder_map["sgc"]["instance"] = sgc_handler
+
+        # Register RAG Handler (REF)
+        ref_handler = RAGHandler(
+            self.auth_manager,
+            self.auth_middleware,
+            self.settings.openai_vector_store_id_ref,
+            self._hanlder_map["ref"]["prefix"],
+            Permission(self._hanlder_map["ref"]["permission"]),
+            self._hanlder_map["ref"]["name"],
+            self._hanlder_map["ref"]["description"],
+            self.stats_manager,
+            self.memory_manager,
+            str(Path(self.settings.templates_dir) / "rag"),
+            "_instructions_ref.txt"
+            )
+        self.handler_registry.register_handler(self._hanlder_map["ref"]["name"], ref_handler, is_default=False)
+        self._hanlder_map["ref"]["instance"] = ref_handler
+
         # Register LLM Handler
         llm_handler = LLMHandler(
             self.auth_manager,
@@ -177,7 +211,7 @@ class MSTeamsBot(ActivityHandler):
             self.memory_manager,
             str(Path(self.settings.templates_dir) / "llm")
             )
-        self.handler_registry.register_handler(self._hanlder_map["llm"]["name"], llm_handler, is_default=True)
+        self.handler_registry.register_handler(self._hanlder_map["llm"]["name"], llm_handler, is_default=False)
         self._hanlder_map["llm"]["instance"] = llm_handler
 
         # Register Admin Handler
@@ -215,40 +249,6 @@ class MSTeamsBot(ActivityHandler):
             )
         self.handler_registry.register_handler(self._hanlder_map["echo"]["name"], echo_handler, is_default=False)
         self._hanlder_map["echo"]["instance"] = echo_handler
-
-        # Register RAG Handler (SGC)
-        sgc_handler = RAGHandler(
-            self.auth_manager,
-            self.auth_middleware,
-            self.settings.openai_vector_store_id_sgc,
-            self._hanlder_map["sgc"]["prefix"],
-            Permission(self._hanlder_map["sgc"]["permission"]),
-            self._hanlder_map["sgc"]["name"],
-            self._hanlder_map["sgc"]["description"],
-            self.stats_manager,
-            self.memory_manager,
-            str(Path(self.settings.templates_dir) / "rag"),
-            "_instructions_sgc.txt"
-            )
-        self.handler_registry.register_handler(self._hanlder_map["sgc"]["name"], sgc_handler, is_default=False)
-        self._hanlder_map["sgc"]["instance"] = sgc_handler
-
-        # Register RAG Handler (REF)
-        ref_handler = RAGHandler(
-            self.auth_manager,
-            self.auth_middleware,
-            self.settings.openai_vector_store_id_ref,
-            self._hanlder_map["ref"]["prefix"],
-            Permission(self._hanlder_map["ref"]["permission"]),
-            self._hanlder_map["ref"]["name"],
-            self._hanlder_map["ref"]["description"],
-            self.stats_manager,
-            self.memory_manager,
-            str(Path(self.settings.templates_dir) / "rag"),
-            "_instructions_ref.txt"
-            )
-        self.handler_registry.register_handler(self._hanlder_map["ref"]["name"], ref_handler, is_default=False)
-        self._hanlder_map["ref"]["instance"] = ref_handler
 
         # Register Help Handler
         help_handler = HelpHandler(
